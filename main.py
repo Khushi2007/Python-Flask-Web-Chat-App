@@ -109,7 +109,7 @@ def chat(user_chat_id):
 
         if len(message) < 1:
             flash('Please type a message to continue!', category='error')
-            return render_template('chat.html', user=current_user, chat_user=chat_user, messages=messages)
+            return render_template('chat.html', user=current_user, chat_user=chat_user, messages=messages, profile=current_user_profile, chat_user_profile=chat_user_profile)
 
         else:
             new_message = Chats(receiver_id=chat_user.id, sender_id=current_user.id, message=message)
