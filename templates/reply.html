@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Reply{% endblock %}
+
+{% block content %}
+
+<center>
+<h3 style="margin-top: 30px;" >
+   {% if message_to_reply_to.sender_id == user.id %}
+   Replying to a message sent by you...
+   {% else %}
+   Replying to a message sent by {{chat_user.first_name}} {{chat_user.last_name}}
+   {% endif %}
+
+</h3>
+</center>
+      
+<div class="card"style="margin-left: 50px; margin-right: 50px; margin-top: 20px">
+   <div class="card-body">
+     {{message_to_reply_to.message}}
+   </div>
+ </div>
+ <form method="post">
+   <div class="input-group" style="margin-left: 50px;">
+     <input type="text" class="form-control" placeholder="Type your reply" id="message" name="message">
+     <span class="input-group-btn">
+       <button class="btn btn-primary" type="submit" style="margin-right: 100px;">Reply</button>
+     </span>
+   </div>
+ </form>
+
+{% endblock %}

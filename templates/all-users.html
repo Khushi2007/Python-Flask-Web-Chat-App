@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}All users{% endblock %}
+
+{% block content %}
+
+{% for person in users_list %}
+
+{% if person.id != user.id %}
+
+
+
+<div class="card" style="max-width: 82rem;">
+   <div class="card-body">
+    <div class="all_users_header">
+      {% for profile in profiles %}
+      {% if profile.user_id == person.id %}
+      <img src="../static/{{profile.profile_image}}" alt="" class="all_user_profile" >
+      {% endif %}{% endfor %}
+      <h5 class="card-title">{{person.first_name}} {{person.last_name}} </h5>
+    </div>
+    
+     <p class="card-text">
+        Username: {{person.username}} <br>
+        Email: {{person.email}}
+     </p>
+     <a href="/chat/{{person.id}}" class="btn btn-primary">Chat with {{person.first_name}} {{person.last_name}} </a>
+   </div>
+ </div> <br>
+
+
+
+{% endif %}
+
+{% endfor %}
+
+{% endblock %}

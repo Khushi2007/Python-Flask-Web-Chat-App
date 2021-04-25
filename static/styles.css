@@ -1,0 +1,38 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.main-content-container {
+   margin: 20px;
+}
+
+.d-flex {
+   margin-left: 500px;
+   display: flex;
+}
+
+.form-control{
+   margin-right: 10px;
+}
+
+.profile_image {
+   border-radius: 50%;
+   width: 200px;
+   height: 200px;
+}
+
+.all_user_profile {
+   border-radius: 50%;
+   width: 50px;
+   height: 50px;
+}
+
+.all_users_header {
+   display: flex;
+}
+
+.all_users_header h5 {
+   margin-top: 10px;
+   margin-left: 10px;
+}

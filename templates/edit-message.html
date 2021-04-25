@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Edit message{% endblock %}
+
+{% block content %}
+      
+<h1>Edit message</h1>
+<br>
+<form method="post">
+   <div class="input-group" style="margin-left: 30px;">
+     <input type="text" class="form-control" placeholder="Type a message" id="message" name="message" value="{{message_to_edit.message}}">
+     <span class="input-group-btn">
+       <button class="btn btn-primary" style="margin-right: 80px;" type="submit">Edit message</button>
+     </span>
+   </div> <br> <center>
+   <button class="btn btn-outline-dark" type="button"><a href="/chat/{{user_chat_id}}">Cancel</a></button> </center>
+ </form>
+
+{% endblock %}

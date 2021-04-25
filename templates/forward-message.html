@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Forward message{% endblock %}
+
+{% block content %}
+      
+<h5>Forward: "{{message_to_forward.message}}" to...
+</h5>
+
+{% for person in users_list %}
+
+{% if person.id != user.id %}
+
+<div class="card" style="max-width: 82rem;">
+   <div class="card-body">
+     <h5 class="card-title">{{person.first_name}} {{person.last_name}} </h5>
+     <p class="card-text">
+        Username: {{person.username}} <br>
+        Email: {{person.email}}
+     </p>
+     <a href="/forward-method/{{person.id}}/{{message_to_forward.message}}" class="btn btn-primary">Forward message to {{person.first_name}} {{person.last_name}} </a>
+   </div>
+ </div> <br>
+
+{% endif %}
+
+{% endfor %} <br> <center>
+
+<a href="/chat/{{user_chat_id}}" class="btn btn-primary">Cancel </a> </center> <br>
+
+{% endblock %}
